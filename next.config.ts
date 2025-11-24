@@ -1,8 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   // Not needed in your project
-  turbopack: { root: __dirname },
+  turbopack: { root: import.meta.dirname },
   reactCompiler: true,
   experimental: {
     turbopackFileSystemCacheForDev: true,

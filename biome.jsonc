@@ -1,0 +1,91 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/core", "ultracite/react", "ultracite/next"],
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    },
+    "jsxRuntime": "reactClassic"
+  },
+  "files": {
+    "includes": [
+      "**",
+      "!!node_modules",
+      "!!.next",
+      "!!dist",
+      "!!public",
+      "!**/next-env.d.ts"
+    ]
+  },
+  "linter": {
+    "rules": {
+      "correctness": {
+        "useExhaustiveDependencies": "off",
+        "useHookAtTopLevel": "off",
+        "noUndeclaredVariables": "off",
+        "noUnusedVariables": {
+          "level": "error",
+          "options": {
+            "ignoreRestSiblings": true
+          }
+        },
+        "useImageSize": "off"
+      },
+      "suspicious": {
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": ["assert", "error", "info", "warn"]
+          }
+        },
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off",
+        "noUnknownAtRules": "off",
+        "noEmptyBlockStatements": "off",
+        "useAwait": "off",
+        "noDocumentCookie": "off",
+        "noBitwiseOperators": "off",
+        "noConfusingVoidType": "off"
+      },
+      "style": {
+        "noMagicNumbers": "off",
+        "useFilenamingConvention": "off",
+        "noNestedTernary": "off",
+        "noNonNullAssertion": "off",
+        "useDefaultSwitchClause": "off",
+        "useBlockStatements": "off"
+      },
+      "nursery": {
+        "noShadow": "off",
+        "noIncrementDecrement": "off",
+        "noReactForwardRef": "off"
+      },
+      "complexity": {
+        "useSimplifiedLogicExpression": "off",
+        "noExcessiveCognitiveComplexity": "off",
+        "noForEach": "off",
+        "noVoid": "off",
+        "noBannedTypes": "off"
+      },
+      "a11y": {
+        "noNoninteractiveElementInteractions": "off",
+        "useKeyWithClickEvents": "off",
+        "useSemanticElements": "off",
+        "useFocusableInteractive": "off",
+        "noSvgWithoutTitle": "off",
+        "noStaticElementInteractions": "off",
+        "useMediaCaption": "off",
+        "useKeyWithMouseEvents": "off",
+        "useAriaPropsSupportedByRole": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
+      "performance": {
+        "noNamespaceImport": "off",
+        "noImgElement": "off",
+        "noBarrelFile": "off"
+      }
+    }
+  }
+}
