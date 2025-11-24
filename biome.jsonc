@@ -4,32 +4,25 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "single"
-    },
-    "jsxRuntime": "reactClassic"
+    }
   },
   "files": {
-    "includes": [
-      "**",
-      "!!node_modules",
-      "!!.next",
-      "!!dist",
-      "!!public",
-      "!**/next-env.d.ts"
-    ]
+    "includes": ["**", "!!node_modules", "!!.next", "!next-env.d.ts"]
   },
   "linter": {
     "rules": {
       "correctness": {
-        "useExhaustiveDependencies": "off",
-        "useHookAtTopLevel": "off",
-        "noUndeclaredVariables": "off",
+        "useExhaustiveDependencies": "off", // eslint
+        "useHookAtTopLevel": "off", // eslint
+        "noUndeclaredVariables": "off", // ts
         "noUnusedVariables": {
           "level": "error",
           "options": {
             "ignoreRestSiblings": true
           }
         },
-        "useImageSize": "off"
+        "useImageSize": "off" // className
+        // "noNestedComponentDefinitions": "off" // shadcn
       },
       "suspicious": {
         "noConsole": {
@@ -37,54 +30,47 @@
           "options": {
             "allow": ["assert", "error", "info", "warn"]
           }
-        },
-        "noExplicitAny": "off",
-        "noArrayIndexKey": "off",
-        "noUnknownAtRules": "off",
-        "noEmptyBlockStatements": "off",
-        "useAwait": "off",
-        "noDocumentCookie": "off",
-        "noBitwiseOperators": "off",
-        "noConfusingVoidType": "off"
+        }
+        // "noExplicitAny": "off" // ts chill
+        // "noArrayIndexKey": "off", // chill
+        // "noUnknownAtRules": "off", // allow for Tailwind @ rules
+        // "noEmptyBlockStatements": "off", // chill
+        // "useAwait": "off", // chill
+        // "noDocumentCookie": "off", // shadcn,
+        // "noBitwiseOperators": "off", // chill
+        // "noConfusingVoidType": "off" // false +
       },
       "style": {
-        "noMagicNumbers": "off",
-        "useFilenamingConvention": "off",
-        "noNestedTernary": "off",
-        "noNonNullAssertion": "off",
-        "useDefaultSwitchClause": "off",
-        "useBlockStatements": "off"
+        // "noMagicNumbers": "off", // chill
+        // "useFilenamingConvention": "off", // chill
+        // "noNestedTernary": "off", // chill
+        "noNonNullAssertion": "off" // ts chill
+        // "useDefaultSwitchClause": "off", // chill
+        // "useBlockStatements": "off" // chill,
       },
       "nursery": {
-        "noShadow": "off",
-        "noIncrementDecrement": "off",
-        "noReactForwardRef": "off"
+        "noShadow": "off", // chill
+        "noIncrementDecrement": "off" // chill
       },
       "complexity": {
-        "useSimplifiedLogicExpression": "off",
-        "noExcessiveCognitiveComplexity": "off",
-        "noForEach": "off",
-        "noVoid": "off",
-        "noBannedTypes": "off"
+        // "useSimplifiedLogicExpression": "off", // false +
+        // "noExcessiveCognitiveComplexity": "off", // chill
+        "noForEach": "off" // chill
+        // "noVoid": "off", // chill
+        // "noBannedTypes": "off" // chill
       },
       "a11y": {
-        "noNoninteractiveElementInteractions": "off",
-        "useKeyWithClickEvents": "off",
-        "useSemanticElements": "off",
-        "useFocusableInteractive": "off",
-        "noSvgWithoutTitle": "off",
-        "noStaticElementInteractions": "off",
-        "useMediaCaption": "off",
-        "useKeyWithMouseEvents": "off",
-        "useAriaPropsSupportedByRole": "off"
+        // "noNoninteractiveElementInteractions": "off", // region role not supported
+        "useKeyWithClickEvents": "off", // shadcn
+        "useSemanticElements": "off", // shadcn
+        "useFocusableInteractive": "off" // shadcn
       },
       "security": {
-        "noDangerouslySetInnerHtml": "off"
+        "noDangerouslySetInnerHtml": "off" // shadcn
       },
       "performance": {
-        "noNamespaceImport": "off",
-        "noImgElement": "off",
-        "noBarrelFile": "off"
+        "noNamespaceImport": "off", // shadcn
+        "noImgElement": "off" // agnostic
       }
     }
   }
